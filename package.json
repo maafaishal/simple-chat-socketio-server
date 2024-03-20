@@ -2,7 +2,7 @@
   "name": "my-chat-server",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "tsup-node",
     "build-dev": "tsup-node --watch",

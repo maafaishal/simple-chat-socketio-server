@@ -7,7 +7,11 @@ const port = process.env.PORT || 3001;
 const app = express();
 const server = createServer(app);
 
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: ['https://localhost:3000']
+  }
+});
 
 io.on("connection", (socket) => {
   socket.on("chat-message", (message: string, username: string) => {

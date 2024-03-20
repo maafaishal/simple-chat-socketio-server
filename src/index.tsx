@@ -9,7 +9,7 @@ const server = createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ['https://localhost:3000']
+    origin: ['https://localhost:3000', 'https://simple-chat-socketio.vercel.app']
   }
 });
 

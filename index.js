@@ -30,9 +30,15 @@ var app = (0, import_express.default)();
 var server = (0, import_node_http.createServer)(app);
 var io = new import_socket.Server(server, {
   cors: {
-    origin: ["https://localhost:3000", "https://simple-chat-socketio.vercel.app"],
+    origin: [
+      "https://localhost:3000",
+      "https://simple-chat-socketio.vercel.app"
+    ],
+    methods: ["GET", "POST"],
+    transports: ["websocket", "polling"],
     credentials: true
-  }
+  },
+  allowEIO3: true
 });
 io.on("connection", (socket) => {
   socket.on("chat-message", (message, username) => {
